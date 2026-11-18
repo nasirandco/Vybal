@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#7C3AED" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="VYBAL" />
+  <title>Install VYBAL</title>
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="icon" type="image/svg+xml" href="/icon-192.svg" />
+  <link rel="apple-touch-icon" href="/icon-192.svg" />
+  <style>
+    :root {
+      --bg: #09090D;
+      --surface: #12121A;
+      --border: rgba(168, 85, 247, 0.28);
+      --violet: #7C3AED;
+      --lavender: #C4B5FD;
+      --text: #F5F3FF;
+      --muted: #A1A1AA;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: radial-gradient(circle at top, rgba(124, 58, 237, 0.22), transparent 55%), var(--bg);
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+    .card {
+      width: 100%;
+      max-width: 440px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 28px 24px;
+      box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+    .brand img {
+      width: 56px;
+      height: 56px;
+      border-radius: 14px;
+    }
+    h1 { margin: 0; font-size: 1.5rem; letter-spacing: 0.04em; }
+    .subtitle { margin: 4px 0 0; font-size: 0.9rem; color: var(--muted); }
+    .btn {
+      width: 100%;
+      border: none;
+      border-radius: 14px;
+      padding: 14px 18px;
+      font-size: 0.98rem;
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      margin-top: 10px;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #8B5CF6, #6D28D9);
+      color: #fff;
+    }
+    .btn-secondary {
+      background: rgba(168, 85, 247, 0.14);
+      color: var(--lavender);
+      border: 1px solid var(--border);
+    }
+    .guide {
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .guide h2 {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      color: var(--lavender);
+    }
+    .guide h3 {
+      margin: 14px 0 6px;
+      font-size: 0.9rem;
+      color: var(--text);
+    }
+    .guide ol {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.88rem;
+      line-height: 1.55;
+    }
+    #installStatus {
+      margin-top: 10px;
+      font-size: 0.84rem;
+      color: var(--lavender);
+      min-height: 18px;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="brand">
+      <img src="/icon-192.svg" alt="VYBAL icon" />
+      <div>
+        <h1>VYBAL</h1>
+        <p class="subtitle">Install on your phone for instant access</p>
+      </div>
+    </div>
+
+    <button id="installBtn" class="btn btn-primary" type="button" hidden>
+      Add VYBAL to Home Screen
+    </button>
+
+    <a
+      class="btn btn-secondary"
+      href="https://ais-pre-byr5jz7urrrzandtjwrhgg-466400087499.europe-west3.run.app"
+      rel="noopener noreferrer"
+    >
+      Launch Live VYBAL App
+    </a>
+
+    <div id="installStatus" aria-live="polite"></div>
+
+    <section class="guide" aria-label="Install Guide">
+      <h2>Phone Install Guide</h2>
+
+      <h3>Android (Chrome)</h3>
+      <ol>
+        <li>Tap <strong>Add VYBAL to Home Screen</strong> above (or open the browser menu <strong>&#8942;</strong>).</li>
+        <li>Choose <strong>Install app</strong> or <strong>Add to Home screen</strong>.</li>
+        <li>Tap <strong>Install</strong> to place VYBAL right on your home screen.</li>
+      </ol>
+
+      <h3>iPhone &amp; iPad (Safari)</h3>
+      <ol>
+        <li>Open this page in <strong>Safari</strong>.</li>
+        <li>Tap the <strong>Share</strong> icon at the bottom of the screen.</li>
+        <li>Scroll down and tap <strong>Add to Home Screen</strong>, then tap <strong>Add</strong>.</li>
+      </ol>
+    </section>
+  </main>
+
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(() => {});
+      });
+    }
+
+    let deferredPrompt = null;
+    const installBtn = document.getElementById('installBtn');
+    const statusEl = document.getElementById('installStatus');
+
+    window.addEventListener('beforeinstallprompt', (event) => {
+      event.preventDefault();
+      deferredPrompt = event;
+      installBtn.hidden = false;
+    });
+
+    installBtn.addEventListener('click', async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      statusEl.textContent = outcome === 'accepted'
+        ? 'VYBAL is being added to your home screen.'
+        : 'You can install VYBAL anytime from your browser menu.';
+      deferredPrompt = null;
+      installBtn.hidden = true;
+    });
+
+    window.addEventListener('appinstalled', () => {
+      statusEl.textContent = 'VYBAL has been installed on your device.';
+      installBtn.hidden = true;
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+{
+  "name": "VYBAL",
+  "description": "Premium mobile-first social media platform built with Jetpack Compose and Supabase.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

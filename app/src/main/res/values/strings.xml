@@ -1,0 +1,123 @@
+<resources>
+    <string name="app_name">VYBAL</string>
+
+    <!-- Navigation -->
+    <string name="nav_home">Home</string>
+    <string name="nav_explore">Explore</string>
+    <string name="nav_create">Create</string>
+    <string name="nav_inbox">Inbox</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Common Actions -->
+    <string name="action_refresh">Refresh</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_sign_in">Sign in</string>
+    <string name="action_create_account">Create account</string>
+    <string name="action_sign_out">Sign out</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_save">Save changes</string>
+    <string name="action_publish">Publish</string>
+    <string name="action_search">Search</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_edit_profile">Edit profile</string>
+    <string name="action_attach_media">Add photo</string>
+    <string name="action_remove_media">Remove photo</string>
+    <string name="action_load_image">Tap to load media (Data Saver)</string>
+
+    <!-- Network & Performance -->
+    <string name="banner_offline">You are offline. Showing cached state until connection returns.</string>
+    <string name="banner_metered">Metered connection detected. Enable Data Saver in Profile to reduce media usage.</string>
+    <string name="label_data_saver">Data Saver Mode</string>
+    <string name="desc_data_saver">Defer heavy media downloads on slow or metered networks and reduce memory usage.</string>
+    <string name="label_low_ram_mode">2GB RAM Optimization Active</string>
+    <string name="desc_low_ram_mode">Image cache capped to 15% heap, RGB_565 decoding, and lightweight 15-item pagination.</string>
+
+    <!-- Supabase Setup / Auth States -->
+    <string name="supabase_not_configured_title">Service Temporarily Unavailable</string>
+    <string name="supabase_not_configured_body">VYBAL is currently finishing setup. Please check back shortly.</string>
+    <string name="auth_required_title">Sign in to VYBAL</string>
+    <string name="auth_required_body">Sign in with your VYBAL account to view live content, publish posts, and sync your inbox.</string>
+    <string name="auth_email_label">Email address</string>
+    <string name="auth_password_label">Password</string>
+    <string name="auth_confirm_password_label">Confirm password</string>
+    <string name="auth_username_label">Username</string>
+    <string name="auth_display_name_label">Display name (optional)</string>
+    <string name="auth_forgot_password">Forgot password?</string>
+    <string name="auth_reset_title">Reset Password</string>
+    <string name="auth_reset_body">Enter the email linked to your VYBAL account and we will send a password reset link.</string>
+    <string name="auth_send_reset_link">Send reset link</string>
+    <string name="auth_reset_sent">Password reset link sent. Check your inbox and follow the instructions.</string>
+    <string name="auth_back_to_signin">Back to sign in</string>
+    <string name="auth_switch_to_signup">New to VYBAL? Create an account</string>
+    <string name="auth_switch_to_signin">Already have an account? Sign in</string>
+    <string name="auth_signup_check_email">Account created. Check your email to confirm your address, then sign in.</string>
+    <string name="auth_signing_out">Signing out…</string>
+    <string name="auth_restoring_session">Restoring your VYBAL session…</string>
+    <string name="protected_create_title">Sign in to create posts</string>
+    <string name="protected_create_body">Publishing posts and uploading media to VYBAL requires an authenticated session.</string>
+    <string name="protected_inbox_title">Your private VYBAL Inbox</string>
+    <string name="protected_inbox_body">Sign in to access your real-time activity notifications and direct messages.</string>
+
+    <!-- Home -->
+    <string name="home_tab_for_you">For You</string>
+    <string name="home_tab_following">Following</string>
+    <string name="home_empty_title">Your feed is ready</string>
+    <string name="home_empty_body">No posts have been published in your connected VYBAL feed yet. Create the first post to see it appear live here.</string>
+
+    <!-- Explore -->
+    <string name="explore_search_placeholder">Search posts or topics</string>
+    <string name="explore_empty_title">Nothing to explore yet</string>
+    <string name="explore_empty_body">Live posts from VYBAL will appear here as soon as they are published or match your search.</string>
+    <string name="explore_no_results_title">No matching posts</string>
+    <string name="explore_no_results_body">Try a different keyword or clear the active filter.</string>
+
+    <!-- Create -->
+    <string name="create_title">New Post</string>
+    <string name="create_placeholder">Share something real with VYBAL…</string>
+    <string name="create_visibility_public">Public</string>
+    <string name="create_visibility_followers">Followers</string>
+    <string name="create_success">Post published to VYBAL.</string>
+    <string name="create_media_selected">Photo attached</string>
+    <string name="create_sign_in_hint">Sign in to publish posts and share photos on VYBAL.</string>
+
+    <!-- Inbox -->
+    <string name="inbox_tab_activity">Activity</string>
+    <string name="inbox_tab_messages">Messages</string>
+    <string name="inbox_activity_empty_title">No activity yet</string>
+    <string name="inbox_activity_empty_body">Likes, comments, follows, and account updates will appear here.</string>
+    <string name="inbox_messages_empty_title">No conversations yet</string>
+    <string name="inbox_messages_empty_body">Direct messages with people on VYBAL will appear here.</string>
+
+    <!-- Profile -->
+    <string name="profile_tab_posts">Posts</string>
+    <string name="profile_tab_media">Media</string>
+    <string name="profile_posts_empty_title">No posts yet</string>
+    <string name="profile_posts_empty_body">Posts you publish from the Create tab will appear on your profile.</string>
+    <string name="profile_display_name_label">Display name</string>
+    <string name="profile_bio_label">Bio</string>
+    <string name="profile_status_connected">Supabase Connected</string>
+    <string name="profile_status_pending">Supabase Config Pending</string>
+    <string name="install_app_title">Get VYBAL on Your Phone</string>
+    <string name="install_app_body">Open the live VYBAL app link on any phone or share it with friends so they can install and launch VYBAL.</string>
+    <string name="action_install_download_app">Install / Download VYBAL</string>
+    <string name="action_share_app_link">Share Link</string>
+    <string name="action_copy_app_link">Copy Link</string>
+    <string name="action_install_guide">Install Guide</string>
+    <string name="install_link_copied">Live link copied to clipboard</string>
+    <string name="install_guide_title">How to Install VYBAL</string>
+    <string name="install_guide_android_title">Android (Chrome / Home Screen)</string>
+    <string name="install_guide_android_steps">1. Tap Install / Download VYBAL to open the live link in Chrome.\n2. Tap the menu icon (⋮) in the top-right corner.\n3. Select \"Install app\" or \"Add to Home screen\".\n4. Tap Install to add the VYBAL icon to your phone.</string>
+    <string name="install_guide_ios_title">iPhone &amp; iPad (Safari)</string>
+    <string name="install_guide_ios_steps">1. Open the shared VYBAL link in Safari.\n2. Tap the Share button at the bottom of the screen.\n3. Scroll down and tap \"Add to Home Screen\".\n4. Tap Add in the top-right corner.</string>
+    <string name="install_guide_close">Done</string>
+
+    <!-- Content Descriptions -->
+    <string name="cd_brand_logo">VYBAL brand emblem</string>
+    <string name="cd_brand_aura">VYBAL ambient violet glow</string>
+    <string name="cd_refresh_feed">Refresh content</string>
+    <string name="cd_network_status">Network connection status</string>
+    <string name="cd_post_media">Attached post media</string>
+    <string name="cd_user_avatar">User profile avatar</string>
+    <string name="cd_clear_search">Clear search query</string>
+    <string name="cd_close_sheet">Close modal</string>
+</resources>
